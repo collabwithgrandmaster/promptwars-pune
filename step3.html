@@ -110,6 +110,24 @@
         .roadmap-line {
             background: repeating-linear-gradient(90deg, #005da7 0px, #005da7 10px, transparent 10px, transparent 20px);
         }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
     </style>
 </head>
 
@@ -228,9 +246,11 @@
                             <span class="text-label-sm uppercase tracking-widest text-secondary font-bold">Phase
                                 01</span>
                         </div>
-                        <h3 class="font-title-sm text-on-surface mb-3">Fundamentals</h3>
-                        <p class="text-body-md text-on-surface-variant mb-6">Master the building blocks: Python basics,
-                            linear algebra, and data structures.</p>
+                        <h3 id="phase1-title" class="font-title-sm text-on-surface mb-3">Loading Beginner Roadmap...</h3>
+                        <p id="phase1-desc" class="text-body-md text-on-surface-variant mb-4">AI is generating your custom path...</p>
+                        <div id="phase1-curriculum" class="space-y-4 mb-6 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                            <!-- Curriculum injected here -->
+                        </div>
                         <div class="w-full bg-surface-container rounded-full h-3">
                             <div class="bg-secondary h-full rounded-full w-full"></div>
                         </div>
@@ -252,9 +272,11 @@
                             </div>
                             <span class="text-label-sm uppercase tracking-widest text-primary font-bold">Phase 02</span>
                         </div>
-                        <h3 class="font-title-sm text-on-surface mb-3">Intermediate Concepts</h3>
-                        <p class="text-body-md text-on-surface-variant mb-6">Deep dive into Supervised Learning, Neural
-                            Networks, and Gradient Descent.</p>
+                        <h3 id="phase2-title" class="font-title-sm text-on-surface mb-3">Loading Advanced Roadmap...</h3>
+                        <p id="phase2-desc" class="text-body-md text-on-surface-variant mb-4">AI is generating your custom path...</p>
+                        <div id="phase2-curriculum" class="space-y-4 mb-6 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                            <!-- Curriculum injected here -->
+                        </div>
                         <div class="w-full bg-surface-container rounded-full h-3">
                             <div class="bg-primary h-full rounded-full w-[42%]"></div>
                         </div>
@@ -277,9 +299,11 @@
                             <span class="text-label-sm uppercase tracking-widest text-tertiary font-bold">Phase
                                 03</span>
                         </div>
-                        <h3 class="font-title-sm text-on-surface mb-3">Advanced Projects</h3>
-                        <p class="text-body-md text-on-surface-variant mb-6">Deploying models, Natural Language
-                            Processing, and Computer Vision capstone.</p>
+                        <h3 id="phase3-title" class="font-title-sm text-on-surface mb-3">Loading Expert Roadmap...</h3>
+                        <p id="phase3-desc" class="text-body-md text-on-surface-variant mb-4">AI is generating your custom path...</p>
+                        <div id="phase3-curriculum" class="space-y-4 mb-6 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                            <!-- Curriculum injected here -->
+                        </div>
                         <div class="w-full bg-surface-container rounded-full h-3">
                             <div class="bg-tertiary-container h-full rounded-full w-0"></div>
                         </div>
@@ -382,8 +406,85 @@
         class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-white rounded-full shadow-[0_8px_24px_rgba(0,96,172,0.3)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 group">
         <span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform">bolt</span>
     </button>
+    <!-- Modal for Metaphor Engine Explanation -->
+    <div id="explanationModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-6">
+            <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-100 flex flex-col max-h-[80vh]">
+                <div class="p-8 border-b border-slate-50 flex justify-between items-start bg-primary/5">
+                    <div>
+                        <span class="text-xs font-bold text-primary uppercase tracking-widest mb-1 block">Metaphor Engine Response</span>
+                        <h2 id="modalTitle" class="font-headline-md text-on-surface">Conceptualizing...</h2>
+                    </div>
+                    <button id="closeModal" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="p-8 overflow-y-auto custom-scrollbar flex-1">
+                    <div id="modalVisualContainer" class="hidden mb-6 rounded-2xl overflow-hidden border border-slate-100 shadow-inner bg-slate-50 relative min-h-[200px]">
+                        <div id="imageSkeleton" class="absolute inset-0 bg-slate-200 animate-pulse flex items-center justify-center">
+                            <span class="material-symbols-outlined text-4xl text-slate-400">image</span>
+                        </div>
+                        <img id="modalVisual" src="" class="w-full h-auto object-cover relative z-10 opacity-0 transition-opacity duration-500" alt="AI Generated Visual" 
+                             onload="this.style.opacity='1'; document.getElementById('imageSkeleton').style.display='none';"
+                             onerror="this.parentElement.classList.add('hidden');">
+                    </div>
+                    <div id="modalExplanation" class="text-body-lg text-on-surface-variant space-y-4">
+                        <!-- AI content here -->
+                    </div>
+                </div>
+                <div class="p-8 bg-slate-50 border-t border-slate-100 flex flex-col gap-6">
+                    <div class="flex items-start gap-4 p-4 bg-secondary-container/20 rounded-xl border border-secondary-container/30">
+                        <span class="material-symbols-outlined text-secondary">tips_and_updates</span>
+                        <div class="flex-1">
+                            <p class="text-xs font-bold text-secondary uppercase tracking-tighter mb-1 text-left">Key Takeaway</p>
+                            <p id="modalTakeaway" class="text-sm font-medium text-on-surface-variant text-left"></p>
+                        </div>
+                    </div>
+                    
+                    <div id="feedbackContainer" class="flex items-center justify-between gap-4">
+                        <p class="text-sm font-medium text-on-surface-variant">Is this explanation clear?</p>
+                        <div class="flex gap-3">
+                            <button id="btnFeedbackClear" class="px-6 py-2 rounded-xl border border-slate-200 text-sm font-bold hover:bg-white transition-colors">Yes, clear!</button>
+                            <button id="btnFeedbackUnclear" class="px-6 py-2 rounded-xl bg-primary text-white text-sm font-bold hover:bg-primary-container transition-colors flex items-center gap-2">
+                                No, try differently
+                                <span class="material-symbols-outlined text-sm">refresh</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Modal elements
+            const modal = document.getElementById('explanationModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalExp = document.getElementById('modalExplanation');
+            const modalTakeaway = document.getElementById('modalTakeaway');
+            const closeModal = document.getElementById('closeModal');
+            const modalVisualContainer = document.getElementById('modalVisualContainer');
+            const modalVisual = document.getElementById('modalVisual');
+            const btnFeedbackClear = document.getElementById('btnFeedbackClear');
+            const btnFeedbackUnclear = document.getElementById('btnFeedbackUnclear');
+            const feedbackContainer = document.getElementById('feedbackContainer');
+
+            closeModal.addEventListener('click', () => modal.classList.add('hidden'));
+            btnFeedbackClear.addEventListener('click', () => {
+                alert("Awesome! Keep going on your roadmap.");
+                modal.classList.add('hidden');
+            });
+
+            let currentTopic = "";
+            let attemptCount = 1;
+
+            btnFeedbackUnclear.addEventListener('click', () => {
+                attemptCount++;
+                generateExplanation(currentTopic, true);
+            });
+
             // Load user data
             let userData = JSON.parse(localStorage.getItem('studyBuddyUserData') || '{}');
             const userId = localStorage.getItem('studyBuddyUserId');
@@ -404,6 +505,64 @@
                         if (data.success && data.user) {
                             userData = data.user;
                             updateGreeting();
+                            
+                            // Now fetch the AI roadmap
+                            fetch('/api/roadmap/' + userId)
+                                .then(r => r.json())
+                                .then(roadmapData => {
+                                    if (roadmapData.success && roadmapData.roadmap) {
+                                        const r = roadmapData.roadmap;
+                                        
+                                        const renderPhase = (phaseId, phaseData) => {
+                                            document.getElementById(`phase${phaseId}-title`).textContent = phaseData.title;
+                                            document.getElementById(`phase${phaseId}-desc`).textContent = phaseData.description;
+                                            
+                                            const container = document.getElementById(`phase${phaseId}-curriculum`);
+                                            container.innerHTML = '';
+                                            
+                                            if (phaseData.topics) {
+                                                phaseData.topics.forEach(topic => {
+                                                    const topicDiv = document.createElement('div');
+                                                    topicDiv.className = 'border-l-2 border-primary/20 pl-4 py-1';
+                                                    
+                                                    const topicTitle = document.createElement('h4');
+                                                    topicTitle.className = 'font-bold text-sm text-on-surface mb-2';
+                                                    topicTitle.textContent = topic.title;
+                                                    topicDiv.appendChild(topicTitle);
+                                                    
+                                                    const subList = document.createElement('ul');
+                                                    subList.className = 'space-y-2';
+                                                    
+                                                    topic.sub_topics.forEach(sub => {
+                                                        const li = document.createElement('li');
+                                                        li.className = 'text-xs flex items-start gap-2 text-on-surface-variant';
+                                                        
+                                                        let statusColor = 'bg-slate-300';
+                                                        if (sub.status === 'In Progress') statusColor = 'bg-blue-500 animate-pulse';
+                                                        if (sub.status === 'Complete') statusColor = 'bg-green-500';
+                                                        
+                                                        li.innerHTML = `
+                                                            <span class="w-2 h-2 rounded-full ${statusColor} mt-1 shrink-0"></span>
+                                                            <div class="flex flex-col">
+                                                                <span class="font-medium">${sub.title}</span>
+                                                                <span class="opacity-60 text-[10px] uppercase tracking-tighter">${sub.status}</span>
+                                                            </div>
+                                                        `;
+                                                        subList.appendChild(li);
+                                                    });
+                                                    
+                                                    topicDiv.appendChild(subList);
+                                                    container.appendChild(topicDiv);
+                                                });
+                                            }
+                                        };
+
+                                        renderPhase(1, r.beginner);
+                                        renderPhase(2, r.advanced);
+                                        renderPhase(3, r.expert);
+                                    }
+                                })
+                                .catch(err => console.error('Failed to fetch AI roadmap:', err));
                         }
                     })
                     .catch(err => console.error('Failed to sync with backend:', err));
@@ -413,33 +572,66 @@
             const generateBtn = document.getElementById('generateLessonBtn');
             const topicInput = document.getElementById('lessonTopicInput');
 
+            function generateExplanation(topic, isAlternative = false) {
+                currentTopic = topic;
+                
+                // Show loading state in modal
+                modal.classList.remove('hidden');
+                modalTitle.textContent = isAlternative ? "Re-conceptualizing..." : "Consulting the Metaphor Engine...";
+                modalExp.innerHTML = '<div class="flex flex-col items-center py-12 gap-4"><div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div><p class="text-sm text-slate-500">' + (isAlternative ? "Taking a multimodal approach..." : "Curating the perfect analogy for you...") + '</p></div>';
+                modalTakeaway.textContent = "Loading...";
+                feedbackContainer.classList.add('opacity-50', 'pointer-events-none');
+                
+                if (!isAlternative) {
+                    modalVisualContainer.classList.add('hidden');
+                } else {
+                    // Reset image for new load
+                    modalVisual.style.opacity = '0';
+                    document.getElementById('imageSkeleton').style.display = 'flex';
+                }
+
+                fetch('/api/explain', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userId, topic, attempt: attemptCount })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    feedbackContainer.classList.remove('opacity-50', 'pointer-events-none');
+                    if (data.success) {
+                        const { title, explanation, takeaway, image_url } = data.explanation;
+                        modalTitle.textContent = title;
+                        modalExp.innerHTML = explanation.split('\n').map(p => `<p class="mb-4">${p}</p>`).join('');
+                        modalTakeaway.textContent = takeaway;
+                        
+                        if (image_url) {
+                            modalVisual.src = image_url;
+                            modalVisualContainer.classList.remove('hidden');
+                        }
+                    } else {
+                        modalTitle.textContent = "Oops!";
+                        modalExp.innerHTML = `<p class="text-error font-medium">${data.error || 'Something went wrong.'}</p>`;
+                        modalTakeaway.textContent = "Please try again later.";
+                    }
+                })
+                .catch(err => {
+                    console.error('Metaphor Engine error:', err);
+                    modalTitle.textContent = "Error";
+                    modalExp.innerHTML = '<p class="text-error">Could not connect to the Metaphor Engine.</p>';
+                    feedbackContainer.classList.remove('opacity-50', 'pointer-events-none');
+                });
+            }
+
             generateBtn.addEventListener('click', () => {
                 const topic = topicInput.value.trim();
                 if (!topic) {
                     alert('Please enter a topic you want to learn!');
                     return;
                 }
-
-                // Build the AI prompt using all the collected context
-                const prompt = `
-Generate a lesson for the topic: "${topic}".
-User Profile:
-- Age: ${userData.age || 'Not provided'}
-- Hobbies: ${userData.hobbies ? userData.hobbies.join(', ') : 'Not provided'}
-- Favorites: ${userData.favorites || 'Not provided'}
-- Goals: ${userData.goals || 'Not provided'}
-- Skills: ${userData.skills ? userData.skills.join(', ') : 'Not provided'}
-- Goal Metric: ${userData.successMetric || 'Not provided'}
-
-Instructions for AI (The Metaphor Engine):
-Act as the user's favorite teacher. Explain "${topic}" using analogies related to their hobbies (${userData.hobbies ? userData.hobbies.join(', ') : 'their interests'}) or favorites (${userData.favorites || 'their favorite things'}). Avoid jargon where possible. Focus on helping them achieve: "${userData.successMetric || 'learning'}".
-            `.trim();
-
-                console.log("SENDING TO AI ENGINE:\n", prompt);
-                alert("We've sent your profile and topic to the Metaphor Engine!\nCheck the console to see the exact prompt we generated.");
+                attemptCount = 1;
+                generateExplanation(topic);
             });
         });
     </script>
 </body>
-
 </html>

@@ -1,0 +1,13 @@
+.env
+venv/
+node_modules/
+*.pyc
+__pycache__/
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+users.json
+users.csv
+test_gemini.py

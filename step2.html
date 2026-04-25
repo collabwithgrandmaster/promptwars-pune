@@ -295,6 +295,7 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         userId,
+                        goals: roadmapData.goals,
                         skills: roadmapData.skills,
                         successMetric: roadmapData.successMetric
                     })
