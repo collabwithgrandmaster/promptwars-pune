@@ -1,0 +1,26 @@
+{
+  "name": "promptwars-pune",
+  "version": "1.0.0",
+  "description": "This repo documents my work at promptwars-pune dt 25-apr-26. full day event",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collabwithgrandmaster/promptwars-pune.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/collabwithgrandmaster/promptwars-pune/issues"
+  },
+  "homepage": "https://github.com/collabwithgrandmaster/promptwars-pune#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

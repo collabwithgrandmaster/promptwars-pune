@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>StudyBuddy AI - Learning Roadmap</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Lexend:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e4efff",
+                        "primary-fixed": "#d4e3ff",
+                        "on-secondary-container": "#007346",
+                        "outline": "#717783",
+                        "surface-container-high": "#dbe9ff",
+                        "secondary-container": "#95f7bb",
+                        "on-primary-fixed": "#001c39",
+                        "on-error": "#ffffff",
+                        "tertiary": "#565d62",
+                        "secondary-fixed-dim": "#7adaa1",
+                        "secondary": "#006d41",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#233143",
+                        "on-primary-container": "#fdfcff",
+                        "outline-variant": "#c1c7d3",
+                        "tertiary-container": "#6e767b",
+                        "surface-tint": "#0060ac",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#a4c9ff",
+                        "surface-dim": "#ccdbf2",
+                        "secondary-fixed": "#95f7bb",
+                        "on-secondary-fixed-variant": "#005230",
+                        "on-primary-fixed-variant": "#004883",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed": "#dce3e9",
+                        "surface-container-low": "#eef4ff",
+                        "on-surface": "#0d1d2d",
+                        "on-surface-variant": "#414751",
+                        "primary": "#005da7",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0d1d2d",
+                        "surface-variant": "#d4e4fb",
+                        "tertiary-fixed-dim": "#c0c7cd",
+                        "primary-fixed-dim": "#a4c9ff",
+                        "on-tertiary-container": "#fbfcff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#e9f1ff",
+                        "surface-container-highest": "#d4e4fb",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed": "#002110",
+                        "primary-container": "#2976c7",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#40484d",
+                        "on-tertiary-fixed": "#151d21",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "margin": "32px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Lexend"],
+                        "title-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Lexend"],
+                        "body-md": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "title-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-sm": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .roadmap-line {
+            background: repeating-linear-gradient(90deg, #005da7 0px, #005da7 10px, transparent 10px, transparent 20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body-md text-on-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 border-b border-slate-100 bg-white/90 backdrop-blur-md flex justify-between items-center h-16 px-8 max-w-full mx-auto shadow-[0_4px_20px_rgba(74,144,226,0.06)]">
+        <div class="flex items-center gap-8">
+            <span class="text-xl font-extrabold tracking-tight text-blue-600">StudyBuddy AI</span>
+            <div class="hidden md:flex gap-6">
+                <a class="text-slate-500 hover:text-blue-500 font-['Plus_Jakarta_Sans'] text-sm font-medium transition-colors"
+                    href="#">Dashboard</a>
+                <a class="text-slate-500 hover:text-blue-500 font-['Plus_Jakarta_Sans'] text-sm font-medium transition-colors"
+                    href="#">Library</a>
+                <a class="text-slate-500 hover:text-blue-500 font-['Plus_Jakarta_Sans'] text-sm font-medium transition-colors"
+                    href="#">Mentors</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 hover:bg-slate-50 rounded-lg active:scale-95 duration-200">
+                <span class="material-symbols-outlined text-slate-500">notifications</span>
+            </button>
+            <button class="p-2 hover:bg-slate-50 rounded-lg active:scale-95 duration-200">
+                <span class="material-symbols-outlined text-slate-500">settings</span>
+            </button>
+            <div class="h-8 w-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+                <img class="h-full w-full object-cover"
+                    data-alt="Close up portrait of a smiling young professional with warm studio lighting and neutral background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8tWmVKPdD4PVo2NHtRb8aLUWjvJ6vL2UE8Es5Bg2MayXVak_psy0sB2NH9Ej-Lg5Fr7Pi4uUzYWh8V2W0RZeWHWLcxbSra7kgfxEZs5oHVGcP7JcgmmF17JwDF2Z7AUfK6IlP3P_b3rv8Bv27s0DyIUmtAbk2c9ONg0lxdnb2tUEntzbJnEz3QTR9P2nTUHmjAPLT6BtdHSBb0vkxnxAtneE-koQ_5Mqv_ZbFSyT94Gb3Fg8UutUxSJjNqmraDTTnjH6y0VfSfIa" />
+            </div>
+        </div>
+    </nav>
+    <!-- SideNavBar -->
+    <aside
+        class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 border-r border-slate-100 bg-slate-50/50 flex flex-col p-4 space-y-2">
+        <div class="px-4 py-6 mb-4">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="p-2 bg-blue-100 rounded-lg">
+                    <span class="material-symbols-outlined text-blue-600">auto_awesome</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 font-['Plus_Jakarta_Sans'] text-sm">Roadmap Explorer</h3>
+                    <p class="text-slate-500 text-xs">AI-Guided Growth</p>
+                </div>
+            </div>
+        </div>
+        <nav class="space-y-1">
+            <a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-white/80 hover:translate-x-1 transition-all duration-300 rounded-xl"
+                href="#">
+                <span class="material-symbols-outlined">map</span>
+                <span class="font-['Plus_Jakarta_Sans'] text-sm">Curriculum</span>
+            </a>
+            <a class="flex items-center gap-3 bg-white text-blue-600 font-semibold rounded-xl shadow-[0_4px_12px_rgba(74,144,226,0.08)] px-4 py-3 hover:translate-x-1 transition-all duration-300"
+                href="#">
+                <span class="material-symbols-outlined">insights</span>
+                <span class="font-['Plus_Jakarta_Sans'] text-sm">Active Path</span>
+            </a>
+            <a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-white/80 hover:translate-x-1 transition-all duration-300 rounded-xl"
+                href="#">
+                <span class="material-symbols-outlined">auto_stories</span>
+                <span class="font-['Plus_Jakarta_Sans'] text-sm">Resources</span>
+            </a>
+            <a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-white/80 hover:translate-x-1 transition-all duration-300 rounded-xl"
+                href="#">
+                <span class="material-symbols-outlined">military_tech</span>
+                <span class="font-['Plus_Jakarta_Sans'] text-sm">Certificates</span>
+            </a>
+        </nav>
+        <div class="mt-auto p-4 bg-primary-container rounded-2xl text-white">
+            <p class="text-xs font-medium opacity-80 mb-2">Current Goal</p>
+            <p class="font-bold mb-4">Mastering Neural Networks</p>
+            <button
+                class="w-full bg-white text-primary font-bold py-2 rounded-xl text-xs hover:shadow-lg transition-shadow">Resume
+                Learning</button>
+        </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="ml-72 pt-24 px-12 pb-12 min-h-screen">
+        <!-- AI Encouragement Bubble -->
+        <div class="max-w-4xl mx-auto mb-12 flex items-start gap-4">
+            <div
+                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg shrink-0">
+                <span class="material-symbols-outlined text-white"
+                    style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+            </div>
+            <div class="bg-blue-50 p-6 rounded-2xl rounded-bl-none shadow-sm border border-blue-100 max-w-2xl">
+                <h4 id="greetingName" class="font-title-sm text-primary mb-1">Hello, Friend!</h4>
+                <p class="text-body-md text-on-surface-variant">"Intelligence is the ability to adapt to change." You've
+                    already mastered 40% of the Fundamentals. Ready to dive into the next phase of your journey?</p>
+            </div>
+        </div>
+        <!-- Roadmap Header -->
+        <div class="max-w-6xl mx-auto mb-16">
+            <h1 class="font-display-lg text-primary mb-4">Your Learning Journey</h1>
+            <p class="text-body-lg text-on-surface-variant max-w-2xl">We've mapped out a personalized path to help you
+                master Machine Learning from the ground up. Each stage is designed to build on your previous wins.</p>
+        </div>
+        <!-- Visual Roadmap (Asymmetric / Bento Style) -->
+        <div class="max-w-6xl mx-auto relative">
+            <div class="absolute top-1/2 left-0 w-full h-[2px] roadmap-line -translate-y-1/2 opacity-20 -z-10"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Topic 1: Fundamentals -->
+                <div class="group">
+                    <div
+                        class="bg-white p-8 rounded-[1.5rem] shadow-[0_4px_20px_rgba(74,144,226,0.08)] border-2 border-secondary-container relative transition-all duration-300 hover:-translate-y-2">
+                        <div
+                            class="absolute -top-4 -left-4 w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center font-bold shadow-md">
+                            <span class="material-symbols-outlined text-sm"
+                                style="font-variation-settings: 'FILL' 1;">check</span>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-secondary-container/30 rounded-xl flex items-center justify-center text-on-secondary-container">
+                                <span class="material-symbols-outlined">architecture</span>
+                            </div>
+                            <span class="text-label-sm uppercase tracking-widest text-secondary font-bold">Phase
+                                01</span>
+                        </div>
+                        <h3 class="font-title-sm text-on-surface mb-3">Fundamentals</h3>
+                        <p class="text-body-md text-on-surface-variant mb-6">Master the building blocks: Python basics,
+                            linear algebra, and data structures.</p>
+                        <div class="w-full bg-surface-container rounded-full h-3">
+                            <div class="bg-secondary h-full rounded-full w-full"></div>
+                        </div>
+                        <p class="text-xs text-secondary mt-2 font-bold">100% Completed</p>
+                    </div>
+                </div>
+                <!-- Topic 2: Intermediate Concepts (Active) -->
+                <div class="group">
+                    <div
+                        class="bg-white p-8 rounded-[1.5rem] shadow-[0_12px_40px_rgba(0,96,172,0.12)] border-2 border-primary ring-4 ring-primary-fixed/30 relative transition-all duration-300 hover:-translate-y-2">
+                        <div
+                            class="absolute -top-4 -left-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold shadow-md animate-pulse">
+                            <span class="material-symbols-outlined text-sm">play_arrow</span>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-primary-fixed/30 rounded-xl flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">psychology</span>
+                            </div>
+                            <span class="text-label-sm uppercase tracking-widest text-primary font-bold">Phase 02</span>
+                        </div>
+                        <h3 class="font-title-sm text-on-surface mb-3">Intermediate Concepts</h3>
+                        <p class="text-body-md text-on-surface-variant mb-6">Deep dive into Supervised Learning, Neural
+                            Networks, and Gradient Descent.</p>
+                        <div class="w-full bg-surface-container rounded-full h-3">
+                            <div class="bg-primary h-full rounded-full w-[42%]"></div>
+                        </div>
+                        <p class="text-xs text-primary mt-2 font-bold">42% In Progress</p>
+                    </div>
+                </div>
+                <!-- Topic 3: Advanced Projects -->
+                <div class="group">
+                    <div
+                        class="bg-surface-container-low p-8 rounded-[1.5rem] border border-outline-variant relative transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-lg">
+                        <div
+                            class="absolute -top-4 -left-4 w-10 h-10 bg-surface-container-highest text-tertiary-container rounded-full flex items-center justify-center font-bold shadow-sm">
+                            <span class="material-symbols-outlined text-sm">lock</span>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-surface-container-highest rounded-xl flex items-center justify-center text-tertiary-container">
+                                <span class="material-symbols-outlined">rocket_launch</span>
+                            </div>
+                            <span class="text-label-sm uppercase tracking-widest text-tertiary font-bold">Phase
+                                03</span>
+                        </div>
+                        <h3 class="font-title-sm text-on-surface mb-3">Advanced Projects</h3>
+                        <p class="text-body-md text-on-surface-variant mb-6">Deploying models, Natural Language
+                            Processing, and Computer Vision capstone.</p>
+                        <div class="w-full bg-surface-container rounded-full h-3">
+                            <div class="bg-tertiary-container h-full rounded-full w-0"></div>
+                        </div>
+                        <p class="text-xs text-tertiary mt-2 font-bold">Upcoming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CTA Section: What would you like to learn now? -->
+        <section class="max-w-4xl mx-auto mt-24">
+            <div
+                class="bg-gradient-to-br from-primary to-primary-container p-12 rounded-[2rem] shadow-2xl relative overflow-hidden">
+                <!-- Abstract Background Shapes -->
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl">
+                </div>
+                <div class="relative z-10 text-center">
+                    <h2 class="font-headline-md text-white mb-6">What would you like to start learning now?</h2>
+                    <p class="text-primary-fixed mb-10 max-w-xl mx-auto">Input any topic or concept, and our AI will
+                        generate a custom lesson plan tailored to your roadmap.</p>
+                    <div class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+                        <div class="flex-1 relative group">
+                            <span
+                                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary">search</span>
+                            <input id="lessonTopicInput"
+                                class="w-full pl-12 pr-6 py-4 rounded-xl border-none ring-2 ring-transparent focus:ring-secondary-container transition-all text-on-surface outline-none"
+                                placeholder="e.g., Backpropagation explained visually..." type="text" />
+                        </div>
+                        <button id="generateLessonBtn"
+                            class="bg-secondary-container text-on-secondary-fixed font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-secondary-container/40 hover:-translate-y-1 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2">
+                            <span>Generate Lesson</span>
+                            <span class="material-symbols-outlined">bolt</span>
+                        </button>
+                    </div>
+                    <div class="mt-8 flex flex-wrap justify-center gap-3">
+                        <span class="text-primary-fixed text-sm font-medium mr-2">Try:</span>
+                        <button
+                            class="text-xs font-bold py-2 px-4 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10">CNNs
+                            Architecture</button>
+                        <button
+                            class="text-xs font-bold py-2 px-4 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10">Matrix
+                            Multiplication</button>
+                        <button
+                            class="text-xs font-bold py-2 px-4 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10">Cost
+                            Functions</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Secondary Learning Grid -->
+        <section class="max-w-6xl mx-auto mt-24">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="font-title-sm text-on-surface">Suggested Next Steps</h3>
+                <button class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                    View full library <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div
+                    class="bg-white p-6 rounded-[1.5rem] shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <img class="w-full h-32 object-cover rounded-xl mb-4"
+                        data-alt="Close up of high quality computer code on a dark screen with vibrant neon syntax highlighting and shallow depth of field"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfwQG1ELyPBAf3O1TAh-SifRBUrqC_KCDlZUKSuNvq2Rylkz_3fdFDl3pzDKqdHV7I6rLdInoLXxeugdSmdDD1LdtE5Xm2yWqkYPEr1OM8WbzkZn6ILUwLsHr4o9FytVBBkJMJrbshMcnOuUyndaycJ1wS1SKkagFGxgwP_-JBOq28uqGTbOG7mLaEAcAPolHiTBE8pJXc24ogXOhrn2lIsjKg52kLqrcG6VLwb5sC80pHhh-ZZ0NZ_M6h7R35cVTAyUXCOolC2cad" />
+                    <p class="text-label-sm text-secondary font-bold mb-1">PRACTICE</p>
+                    <h4 class="font-bold text-on-surface">Python for ML</h4>
+                    <p class="text-xs text-on-surface-variant mt-2">15 min exercise</p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-[1.5rem] shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <img class="w-full h-32 object-cover rounded-xl mb-4"
+                        data-alt="Detailed financial data visualization chart with blue and green lines on a clean light background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJweuzc4q6OCMGA1XThwXlG04Kj4oLBf9liaAw516fSCVTMSfcV1hI22pH2zNf1hYt0hpiO640AqcR9dfSd0575O9UP_sLnCVLxzokH38KZfU47WHbFJcnnVgNh5oh5AWIWu-9ZdjQL3eu0B80mA68G8lxez0-HFPWIRDtG74seavF9xVAWj-ggNYIs0KMM1moL6DGXXxh57RiTegGdj6bjp1X4blqvmAqExNEg_qCOd6epoxEsl1TDz96N4v3dqxAy2kYW_6H7XTM" />
+                    <p class="text-label-sm text-primary font-bold mb-1">THEORY</p>
+                    <h4 class="font-bold text-on-surface">Data Visualization</h4>
+                    <p class="text-xs text-on-surface-variant mt-2">10 min video</p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-[1.5rem] shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <img class="w-full h-32 object-cover rounded-xl mb-4"
+                        data-alt="A glowing blue brain silhouette composed of neural networks and digital circuitry on a dark background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsk-rqMFJKTPGszmnNO_3YFxK6EaVewIvgBpOni16AzdATM0YPjgupZHlI-A-Hrv7IPCUqOJZT-U6JGeg6nVmANsgSMsuLlkN2gb7SxoB847e6BsDjVQPoAzlM-beHCmaTwud1sP1JeakGMCVGf1Eumk-j5CBgwY5hzwy3piJCX1L_fZH3ZpCl84Lii7k7R9DXOeSwzunFwjDivpHruTnJTbvt81a_6mxXZ2FdB7pMjW82FJISrecS0Mc9hvQklSRc1E7dLl0JPBz_" />
+                    <p class="text-label-sm text-on-secondary-container font-bold mb-1">INTERACTIVE</p>
+                    <h4 class="font-bold text-on-surface">Neural Sandbox</h4>
+                    <p class="text-xs text-on-surface-variant mt-2">Open lab session</p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-[1.5rem] shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <img class="w-full h-32 object-cover rounded-xl mb-4"
+                        data-alt="A clean top-down view of a modern developer workspace with a laptop and coffee mug in soft natural light"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPlHrJE9tbMj0Nw0IjmjBQw9cK9_sm63aBJNO8s7rv6LTwipwxidlcfYBahX4aQsWR3YpFBYRn9hZfWwfnbuW-Iz02lcZtEo0Qj10QZZRE2-CDbJIsoHIhKxV1hnAJRSVI5Cbf0Nqr38okrJ30mSPrO4QpXA4LHID_Us93SEJh417ndEaqCgTwx9AqMWbK-B4_xuBbwFyCJElbJGspMkn1vAdDHePO8D0abIbqEbvJG1CShnxvs44o2c5YH42MYwU6TR7FaQavrb6B" />
+                    <p class="text-label-sm text-error font-bold mb-1">QUIZ</p>
+                    <h4 class="font-bold text-on-surface">Linear Regression</h4>
+                    <p class="text-xs text-on-surface-variant mt-2">5 questions</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Contextual FAB -->
+    <button
+        class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-white rounded-full shadow-[0_8px_24px_rgba(0,96,172,0.3)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 group">
+        <span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform">bolt</span>
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load user data
+            let userData = JSON.parse(localStorage.getItem('studyBuddyUserData') || '{}');
+            const userId = localStorage.getItem('studyBuddyUserId');
+            const greetingName = document.getElementById('greetingName');
+
+            function updateGreeting() {
+                if (userData.name) {
+                    greetingName.textContent = 'Hello, ' + userData.name + '!';
+                }
+            }
+            updateGreeting();
+
+            // Fetch latest from backend if available
+            if (userId) {
+                fetch('/api/user/' + userId)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success && data.user) {
+                            userData = data.user;
+                            updateGreeting();
+                        }
+                    })
+                    .catch(err => console.error('Failed to sync with backend:', err));
+            }
+
+            // Handle Generate Lesson button
+            const generateBtn = document.getElementById('generateLessonBtn');
+            const topicInput = document.getElementById('lessonTopicInput');
+
+            generateBtn.addEventListener('click', () => {
+                const topic = topicInput.value.trim();
+                if (!topic) {
+                    alert('Please enter a topic you want to learn!');
+                    return;
+                }
+
+                // Build the AI prompt using all the collected context
+                const prompt = `
+Generate a lesson for the topic: "${topic}".
+User Profile:
+- Age: ${userData.age || 'Not provided'}
+- Hobbies: ${userData.hobbies ? userData.hobbies.join(', ') : 'Not provided'}
+- Favorites: ${userData.favorites || 'Not provided'}
+- Goals: ${userData.goals || 'Not provided'}
+- Skills: ${userData.skills ? userData.skills.join(', ') : 'Not provided'}
+- Goal Metric: ${userData.successMetric || 'Not provided'}
+
+Instructions for AI (The Metaphor Engine):
+Act as the user's favorite teacher. Explain "${topic}" using analogies related to their hobbies (${userData.hobbies ? userData.hobbies.join(', ') : 'their interests'}) or favorites (${userData.favorites || 'their favorite things'}). Avoid jargon where possible. Focus on helping them achieve: "${userData.successMetric || 'learning'}".
+            `.trim();
+
+                console.log("SENDING TO AI ENGINE:\n", prompt);
+                alert("We've sent your profile and topic to the Metaphor Engine!\nCheck the console to see the exact prompt we generated.");
+            });
+        });
+    </script>
+</body>
+
+</html>
